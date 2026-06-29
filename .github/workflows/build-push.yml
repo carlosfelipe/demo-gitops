@@ -27,6 +27,12 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Configurar Docker build cloud
+        uses: docker/setup-buildx-action@v4
+        with:
+          driver: cloud
+          endpoint: "${{ vars.DOCKERHUB_USERNAME }}/${{ vars.CLOUD_BUILDER_NAME }}"
+
       - name: Gerar metadados (tags e labels)
         id: meta
         uses: docker/metadata-action@v5
