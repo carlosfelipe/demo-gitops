@@ -19,7 +19,7 @@ public class HelloControllerTests {
     public void deveRetornarSaudacaoComSucesso() throws Exception {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello from GitOps!"));
+                .andExpect(content().string("Hello from GitOps Demo!"));
     }
 
     @Test
