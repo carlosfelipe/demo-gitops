@@ -1,9 +1,0 @@
-name: Hello
-
-on: push
-jobs:
-  saudacao:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer olá
-        run: echo "Olá do GitHub Actions!"
