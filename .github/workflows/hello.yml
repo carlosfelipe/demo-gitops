@@ -1,8 +1,9 @@
-name: Hello World Workflow CI 
-on: push 
-  jobs:
-    saudacao:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Say Hello
-          run: echo "Hello World!"
+name: "Hello CI Workflow"
+
+on: push
+jobs:
+  saudacao:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: "Hello World"
+        run: echo "Hello World!"
