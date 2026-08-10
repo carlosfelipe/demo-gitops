@@ -12,5 +12,5 @@ jobs:
           AMBIENTE: ${{ vars.APP_ENV }}          # variable → texto plano
           TOKEN:    ${{ secrets.DEPLOY_TOKEN }}   # secret → mascarado
         run: |
-          echo "Ambiente: $AMBIENTE"
+          echo "Ambiente: $AMBIENTE - teste treinamento CI/CD"
           echo "Token:    $TOKEN"
