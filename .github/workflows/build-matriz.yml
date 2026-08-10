@@ -1,0 +1,26 @@
+name: Testes em Matriz (Spring Boot)
+
+on: [push, pull_request]
+
+jobs:
+  testar:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false 
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        spring-profile: [test, integration-test]
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      # Roda o Maven passando o perfil do Spring dinamicamente
+      - name: Executar Testes
+        run: ./mvnw test -Dspring.profiles.active=${{ matrix.spring-profile }}
